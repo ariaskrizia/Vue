@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <div id="app"></div>
+    <script>
+        const vm = Vue.createApp({
+            data() {
+                return {
+                    contador: 0,
+                };
+            },
+            metodo: {
+                incrementar() {
+                    console.log('click!');
+                }
+            },
+            template: `<button v-on:click="incrementar">{{contador}}</button>`,
+        }
+        ).mount('#app');
+        console.log(vm); //console para manipular desde la consola del browser
+    </script>
+</body>
+</html>
